@@ -1,25 +1,35 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import addsmoothieview from '../views/Addsmoothieview.vue'
+import Index from '../components/Index.vue'
+import AddSmoothie from '../components/AddSmoothie.vue'
+import EditSmoothie from '../components/EditSmoothie.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home
-  },
-  {
-    path: '/addsmoothie',
-    name: 'addsmoothie-view',
-    component: addsmoothieview
-  }
+const routes = [{
+        path: '/',
+        name: 'Index',
+        component: Index
+    },
+    {
+        path: '/add-smoothie',
+        name: 'AddSmoothie',
+        component: AddSmoothie
+    },
+    {
+        path: '/edit-smoothie/:smoothie_slug',
+        name: 'EditSmoothie',
+        component: EditSmoothie
+    },
+    {
+        path: "*",
+        name: 'Index',
+        component: Index
+    }
 ]
 
 const router = new VueRouter({
-  routes
+    routes
 })
 
 export default router
